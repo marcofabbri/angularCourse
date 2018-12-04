@@ -30,4 +30,37 @@ export class AppComponent {
   public retrieveCommits(): void {
     this.commitsService.retrieveCommits().subscribe(commits => this.commits = commits);
   }
+
+
+  public getPrevUrl(): string {
+    return this.commitsService.getPrevUrl();
+  }
+
+  public getFirstUrl(): string {
+    return this.commitsService.getFirstUrl();
+  }
+
+  public getNext(): string {
+    return this.commitsService.getNextUrl();
+  }
+
+  public getLastPage(): string {
+    return this.commitsService.getLastUrl();
+  }
+
+  public goToNextPage(): void {
+    this.commitsService.retrieveNextPage().subscribe(commits => this.commits = commits);
+  }
+
+  public goToLastPage(): void {
+    this.commitsService.retrieveLastPage().subscribe(commits => this.commits = commits);
+  }
+
+  public goToFirstPage(): void {
+    this.commitsService.retrieveFirstPage().subscribe(commits => this.commits = commits);
+  }
+
+  public goToPrevPage(): void {
+    this.commitsService.retrievePrevPage().subscribe(commits => this.commits = commits);
+  }
 }

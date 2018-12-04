@@ -18,5 +18,9 @@
     <button type="button" (click)="retrieveCommits()">Recupera commit</button>
   </div>
   <h3>Elenco commit</h3>
+  <div><button type="button" (click)="goToFirstPage()">Prima pagina</button></div>
+  <div><button type="button" (click)="goToPrevPage()">Pagina precedente</button></div>
+  <div><button type="button" (click)="goToNextPage()">Prossima pagina</button></div>
+  <div><button type="button" (click)="goToLastPage()">Ultima pagina</button></div>
   <div *ngFor="let commit of commits">{{commit.author.login}} | {{commit.commit.message}}</div>
 </div>
