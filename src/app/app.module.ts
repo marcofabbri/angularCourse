@@ -5,12 +5,14 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { TokenHeaderInterceptorComponent } from './token-header-interceptor/token-header-interceptor.component';
 import { HighlightDirective } from './highlight.directive';
+import { UnlessDirective } from './unless.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     TokenHeaderInterceptorComponent,
     HighlightDirective,
+    UnlessDirective,
   ],
   imports: [
     BrowserModule,

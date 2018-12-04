@@ -22,5 +22,7 @@
   <div><button type="button" (click)="goToPrevPage()">Pagina precedente</button></div>
   <div><button type="button" (click)="goToNextPage()">Prossima pagina</button></div>
   <div><button type="button" (click)="goToLastPage()">Ultima pagina</button></div>
-  <div *ngFor="let commit of commits" appHighlight [highlightColor]="color(commit)">{{commit.author.login}} | {{commit.commit.message}}</div>
+  <div *ngFor="let commit of commits" appHighlight [highlightColor]="color(commit)">
+    <div *appUnless="commit.author.login !== 'AndrewKushnir'">{{commit.author.login}} | {{commit.commit.message}}</div>
+  </div>
 </div>
