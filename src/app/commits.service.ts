@@ -4,7 +4,7 @@ import { Observable, of } from 'rxjs';
 import { CommitsModel } from './commits-model';
 import { map } from 'rxjs/operators';
 
-const BASE_URI = '/github/';
+const BASE_URI = '/';
 const REPO_NAME = 'angular/angular';
 const COMMITS_ENDPOINT = '/commits';
 const LINK_HEADER = 'Link';
