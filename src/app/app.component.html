@@ -18,5 +18,5 @@
     <button type="button" (click)="retrieveCommits()">Recupera commit</button>
   </div>
   <h3>Elenco commit</h3>
-  <div>{{ commits | json }}</div>
+  <div *ngFor="let commit of commits">{{commit.author.login}} | {{commit.commit.message}}</div>
 </div>

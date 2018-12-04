@@ -8,7 +8,7 @@ import { TokenHeaderInterceptorComponent } from './token-header-interceptor/toke
 @NgModule({
   declarations: [
     AppComponent,
-    TokenHeaderInterceptorComponent
+    TokenHeaderInterceptorComponent,
   ],
   imports: [
     BrowserModule,
