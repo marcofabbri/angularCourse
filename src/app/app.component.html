@@ -11,5 +11,12 @@
   <button type="button" (click)="saveToken()">Salva il token</button>
 </div>
 <div *ngIf="hasToken()">
-  Il token è: {{token}}
+  <div>
+    Il token è: {{token}}
+  </div>
+  <div>
+    <button type="button" (click)="retrieveCommits()">Recupera commit</button>
+  </div>
+  <h3>Elenco commit</h3>
+  <div>{{ commits | json }}</div>
 </div>

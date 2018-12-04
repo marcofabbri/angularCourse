@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { TokenService } from './token.service';
+import { CommitsService } from './commits.service';
 
 @Component({
   selector: 'app-root',
@@ -11,8 +12,10 @@ export class AppComponent {
 
   public token: string;
 
-  constructor(private tokenService: TokenService) {
+  public commits: any;
 
+  constructor(private tokenService: TokenService, private commitsService: CommitsService) {
+    this.token = this.tokenService.getToken();
   }
 
   public hasToken(): boolean {
@@ -21,5 +24,9 @@ export class AppComponent {
 
   public saveToken(): void {
     this.tokenService.setToken(this.token);
+  }
+
+  public retrieveCommits(): void {
+    this.commitsService.retrieveCommits().subscribe(commits => this.commits = commits);
   }
 }
