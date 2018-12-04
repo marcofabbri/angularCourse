@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { TokenService } from './token.service';
 import { CommitsService } from './commits.service';
-import { CommitsModel } from './commits-model';
+import { CommitsModel, Commit } from './commits-model';
 import { environment } from '../environments/environment';
 
 @Component({
@@ -63,5 +63,12 @@ export class AppComponent {
 
   public goToPrevPage(): void {
     this.commitsService.retrievePrevPage().subscribe(commits => this.commits = commits);
+  }
+
+  public color(commit: CommitsModel): string {
+    if (commit && commit.commit && commit.commit.message && commit.commit.message.length > 120) {
+      return 'cyan';
+    }
+    return 'red';
   }
 }
